@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Insert row in a table</title>
+
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <table id="sampleTable" border="1">
+      <tr>
+        <td>Row1 cell1</td>
+        <td>Row1 cell2</td>
+      </tr>
+      <tr>
+        <td>Row2 cell1</td>
+        <td>Row2 cell2</td>
+      </tr>
+    </table>
+    <br />
+    <input type="button" onclick="insert_Row()" value="Insert row" />
+
+    <script>
+      let i = 3;
+      $(document).ready(() => {
+        i = $("#sampleTable tr").length + 1;
+      });
+
+      function insert_Row(event) {
+        let markup = `
+        <tr>
+            <td> Row${i} cell1</td>
+            <td> Row${i} cell2</td>
+        </tr>
+        `;
+        $("#sampleTable").append(markup);
+        i++;
+      }
+    </script>
+  </body>
+</html>

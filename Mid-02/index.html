@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td><label for="input">Enter a to do task</label></td>
+      </tr>
+      <tr>
+        <td><input type="text" id="input" /></td>
+        <td>
+          <button type="button" onclick="generateTask()">Add Task</button>
+        </td>
+      </tr>
+    </table>
+
+    <br /><br />
+    <section id="list"></section>
+
+    <script>
+      let i = 0;
+      function generateTask(event) {
+        let div = document.createElement("div");
+
+        let cb = document.createElement("input");
+        cb.setAttribute("type", "checkbox");
+        cb.onclick = strikeThrough;
+        cb.setAttribute("id", i);
+
+        let label = document.createElement("label");
+        label.setAttribute("for", i);
+        label.innerText = document.getElementById("input").value;
+
+        let edit = document.createElement("a");
+        edit.setAttribute("href", "//");
+        edit.innerText = "Edit";
+        edit.onclick = editRecord;
+
+        let del = document.createElement("a");
+        del.setAttribute("href", "//");
+        del.innerText = "Delete";
+        del.onclick = deleteRecord;
+
+        div.appendChild(cb);
+        div.appendChild(label);
+        div.append("   ");
+        div.appendChild(edit);
+        div.append("   ");
+        div.appendChild(del);
+
+        document.getElementById("list").appendChild(div);
+      }
+
+      function strikeThrough(event) {
+        debugger;
+        let label = event.target.nextElementSibling;
+        if (label.children.length == 0) {
+          let s = document.createElement("s");
+          s.innerText = label.innerText;
+          label.innerText = "";
+          label.appendChild(s);
+        } else {
+          label.innerText = label.children[0].innerText;
+          label.children.length = 0;
+        }
+      }
+
+      function editRecord(event) {
+        let id = event.target.previousElementSibling.getAttribute("for");
+        let par = event.target.parentElement;
+
+        let div = event.target.parentElement;
+        div.innerHTML = "";
+        let input = document.createElement("input");
+        let btn = document.createElement("button");
+        btn.innerText = "Save";
+
+        btn.onclick = (event) => {
+          div.innerHTML = "";
+          let cb = document.createElement("input");
+          cb.setAttribute("type", "checkbox");
+          cb.onclick = strikeThrough;
+          cb.setAttribute("id", i);
+
+          let label = document.createElement("label");
+          label.setAttribute("for", i);
+          label.innerText = input.value;
+
+          let edit = document.createElement("a");
+          edit.setAttribute("href", "//");
+          edit.innerText = "Edit";
+          edit.onclick = editRecord;
+
+          let del = document.createElement("a");
+          del.setAttribute("href", "//");
+          del.innerText = "Delete";
+          del.onclick = deleteRecord;
+
+          div.appendChild(cb);
+          div.appendChild(label);
+          div.append("   ");
+          div.appendChild(edit);
+          div.append("   ");
+          div.appendChild(del);
+        };
+
+        div.appendChild(input);
+        div.appendChild(btn);
+      }
+
+      function deleteRecord(event) {
+        document.getElementById("list").removeChild(event.target.parentElement);
+      }
+    </script>
+  </body>
+</html>

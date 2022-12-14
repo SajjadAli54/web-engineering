@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div + p{
+            padding: 10px;
+            background-color: yellowgreen;
+        }
+
+        div ~ p{
+            color:blue;
+            font-weight: 800;
+        }
+
+        div > p{
+            background-color: cadetblue;
+        }
+
+        ul > li:nth-child(even){
+            width: 50px;
+            height: 30px;
+            background-color: blue;
+            margin: 10px;
+        }
+        ul > li:nth-child(odd){
+            width: 60px;
+            height: 20px;
+            background-color: green;
+            margin: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Hello World
+        <p>
+            Hello p inside div
+        </p>
+        <a href="//">
+            <p>
+                Hello double inside p
+            </p>
+        </a>
+    </div>
+    <p style="visibility: hidden;">
+        Hello My Paragraph
+    </p>
+
+    <p>
+        Hello My Paragraph
+    </p>
+
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

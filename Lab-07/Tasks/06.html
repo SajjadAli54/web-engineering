@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe Game</title>
+
+    <style>
+      td {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 100px;
+        font-size: xx-large;
+        background-color: lightgray;
+        font-weight: bolder;
+        color: brown;
+      }
+      div {
+        width: 600px;
+        height: 100px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      button {
+        width: 20%;
+        height: 40%;
+        font-size: large;
+        color: green;
+        border-radius: 10px;
+        background-color: greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="table">
+      <tr>
+        <td id="1"></td>
+        <td id="2"></td>
+        <td id="3"></td>
+      </tr>
+      <tr>
+        <td id="4"></td>
+        <td id="5"></td>
+        <td id="6"></td>
+      </tr>
+      <tr>
+        <td id="7"></td>
+        <td id="8"></td>
+        <td id="9"></td>
+      </tr>
+    </table>
+    <div>
+      <button type="button" onclick="restartGame()">Restart</button>
+    </div>
+
+    <script src="jquery.js"></script>
+
+    <script>
+      let x = true;
+      let text = "X";
+      $(document).ready(() => $("button").click());
+
+      function restartGame(event) {
+        $("td").click(td_click);
+        $("td").text("");
+        $("td").css("backgroundColor", "lightgray");
+        x = true;
+        text = "X";
+      }
+
+      function td_click(event) {
+        // debugger;
+        $(event.target).text(text);
+        let array = $("td")
+          .toArray()
+          .map((x) => x.innerText);
+        if (x) {
+          text = "O";
+          $(event.target).css("color", "blue");
+          if (check(array[0], array[1], array[2], "X")) win(1, 2, 3);
+          else if (check(array[3], array[4], array[5], "X")) win(4, 5, 6);
+          else if (check(array[6], array[7], array[8], "X")) win(7, 8, 9);
+          else if (check(array[0], array[3], array[6], "X")) win(1, 4, 7);
+          else if (check(array[1], array[4], array[7], "X")) win(2, 5, 8);
+          else if (check(array[2], array[5], array[8], "X")) win(3, 6, 9);
+          else if (check(array[0], array[4], array[8], "X")) win(1, 5, 9);
+          else if (check(array[2], array[4], array[6], "X")) win(3, 5, 7);
+        } else {
+          text = "X";
+          $(event.target).css("color", "green");
+
+          if (check(array[0], array[1], array[2], "O")) win(1, 2, 3);
+          else if (check(array[3], array[4], array[5], "O")) win(4, 5, 6);
+          else if (check(array[6], array[7], array[8], "O")) win(7, 8, 9);
+          else if (check(array[0], array[3], array[6], "O")) win(1, 4, 7);
+          else if (check(array[1], array[4], array[7], "O")) win(2, 5, 8);
+          else if (check(array[2], array[5], array[8], "O")) win(3, 6, 9);
+          else if (check(array[0], array[4], array[8], "O")) win(1, 5, 9);
+          else if (check(array[2], array[4], array[6], "O")) win(3, 5, 7);
+        }
+        x = !x;
+        $(event.target).off();
+      }
+
+      function win(a, b, c) {
+        $(`#${a},#${b},#${c}`).css("backgroundColor", "red");
+        $("td").off();
+      }
+      function check(a, b, c, lebel) {
+        return a == lebel && b == lebel && c == lebel;
+      }
+    </script>
+  </body>
+</html>

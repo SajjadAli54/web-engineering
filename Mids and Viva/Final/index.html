@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab Final Section A</title>
+
+    <script
+      src="https://kit.fontawesome.com/38e57366c8.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+        table{
+            width: 60%;
+            border: 1px black solid;
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+        }
+
+        input, textarea{
+            width: 300px;
+            height: 30px;
+        }
+
+        textarea{
+            height: 120px;
+        }
+
+        button{
+            width: 50px;
+            height: 30px;
+            margin-left: 10px;
+            background-color: cadetblue;
+            font-weight: 600;
+        }
+
+        .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+      .post {
+        width: 60%;
+        margin: 5px;
+        border: 2px lightgray solid;
+        border-radius: 10px;
+      }
+
+      h1.name, p{
+        margin: 5px;
+      }
+
+      .data {
+        display: inline-block;
+      }
+
+      .footer{
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      a{
+        text-decoration: none;
+      }
+
+    </style>
+</head>
+<body>
+    <h1>Enter details of post below</h1>
+    <table>
+        <tr>
+            <td>
+                <label for="name">User Profile Name</label>
+            </td>
+            <td>
+                <input type="text" id="name" width="300" value="Sajjad Ali">
+            </td>
+        </tr>
+
+        <tr>
+            <td><label for="job">Job title or Role</label></td>
+            <td><input type="text" id="job" value="Machine Learning Engineer"></td>
+        </tr>
+        <tr>
+            <td><label for="postText">Post Content or Text</label></td>
+            <td>
+                <textarea id="postText" cols="28" rows="6" 
+                    value="Respect those who deserve for it. We are not jokers to entertain everyone">
+
+                    Respect those who deserve for it. We are not jokers to entertain everyone
+                </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button type="button" onclick="postText()">Post</button></td>
+        </tr>
+    </table>
+
+    <section id="posts">
+
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+
+        onload = (event) =>{
+            $('button').click();
+        }
+
+        function postText(event){
+            let name = $('#name').val();
+            let job = $('#job').val();
+            let text = $('#postText').val();
+            
+            let date = new Date();
+            data = `${date.getDate()}/${date.getMonth()/date.getFullYear()} ${date.getTime()}` 
+            let myPost = `
+            <div class="post">
+                <div class="header">
+                    <div>
+                        <img src="https://cdn-icons-png.flaticon.com/512/145/145867.png" width="100px" height="100px" class="data" />
+                        <div class="data">
+                            <h1 class="name">${name}</h1>
+                            <p>${job}</p>
+                            <p>${date}</p>
+                        </div>
+                    </div>
+                    <div>...</div>
+                </div>
+
+                <p> ${text} </p>
+                    
+                <ul class="footer">
+                    <li><a href="//"> <i class="fa-solid fa-thumbs-up"></i> Like</a></li>
+                    <li><a href="//"> <i class="fa-thin fa-comment"></i> Comment</a></li>
+                    <li><a href="//"><i class="fa-thin fa-share"></i> Share</a></li>
+                    <li><a href="//"><i class="fa-thin fa-paper-plane"></i> Send</a></li>
+                </ul>
+            </div>
+            `
+
+            $('#posts').append(myPost);
+        }
+    </script>
+</body>
+</html>

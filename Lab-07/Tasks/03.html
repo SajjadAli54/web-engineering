@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JS DOM paragraph style</title>
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <p id="text">jQuery Exercise</p>
+    <div>
+      <button id="jsstyle" onclick="js_style()">Style</button>
+    </div>
+
+    <script>
+      function js_style(event) {
+        $("#text").css("font-family", "MVBoli");
+        $("#text").css("color", "blue");
+        $("#text").css("font-weight", 900);
+        $("#text").css("font-size", 28);
+      }
+    </script>
+  </body>
+</html>
