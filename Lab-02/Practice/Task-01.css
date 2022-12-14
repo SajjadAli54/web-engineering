@@ -1,0 +1,27 @@
+header{
+    width: 80%;
+    border: 2px black solid;
+    
+    background-color: rgba(38, 145, 123, 0.3);
+    margin: 0 auto;
+}
+
+ul{
+    size: 80%;
+    margin: 0 auto;
+    list-style: none;
+}
+
+li{
+    width: 10%;
+    background-color: black;
+    display: inline-block;
+    
+}
+
+li a{
+    border: 2px white solid;
+    padding: 1px;
+    text-decoration: none;
+    color: white;
+}

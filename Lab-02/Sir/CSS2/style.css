@@ -1,0 +1,91 @@
+/* .content {
+    margin: 15px 30px;
+} */
+.div1 {
+    margin: 0px auto;
+    /* display: inline-block; */
+    background-color: blanchedalmond;
+    height: 100px;
+    width: 700px;
+
+    font-size: large;
+    font-style: italic;
+    font-weight:bold;
+    font-family: "Courier New", Arial, sans-serif;
+
+    /* padding: top right botton left */
+    /* padding: 50px 100px ; */
+    /* border: 10px solid yellow; */
+    /* box-sizing: border-box; */
+    /* padding-left: 100px;
+    padding-top: 50px;
+    padding-right: 100px;
+    padding-bottom: 50px; */
+    /* margin-bottom: 50px; */
+}
+
+.div2 {
+    /* display: inline-block; */
+    /* margin-top: 70px; */
+    background-color: purple;
+    color: yellow;
+    height: 100px;
+    width: 180px;
+    padding: 50px 100px ;
+    border: 10px solid red;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    padding: 8px 20px;
+}
+
+.box1 {
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+.box2 {
+    background-color: red;
+    width: 120px;
+    height: 100px;
+    float: left;
+    /* clear: left; */
+}
+.box3 {
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+    clear:both;
+}
+.box1:hover {
+    background-color: chartreuse;
+}
+
+ul li:nth-child(even) {
+    background-color: gray;
+}
+
+.container {
+    background-color: lightblue;
+    width: 100%;
+    height: 500px;
+    display: flex;
+}
+.left {
+    /* width: 80%; */
+    background-color: red;
+    flex: 2;
+}
+.right{
+    /* width: 20%; */
+    background-color:yellow;
+    flex: 1;
+}
+.third{
+    /* width: 20%; */
+    background-color:green;
+    flex: 1;
+}

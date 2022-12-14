@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/38e57366c8.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+
+    <style>
+        main{
+            background-color: rgb(180, 115, 30);
+            width: 800px;
+            height: 1400px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        h2{
+            color: lightgray;
+        }
+
+        .input{
+            width: 400px;
+            height: 30px;
+        }
+
+        input{
+            margin: 10px;
+            box-sizing: border-box;
+        }
+
+        textarea{
+            width: 400px;
+        }
+
+        div{
+            width: 80%;
+            height: 20%;
+            background-color: rgb(218, 185, 141);;
+            margin: 10px;
+            padding: 10px;
+            border : white 5px solid;
+            border-radius: 10px;  
+        }
+
+        section{
+            width: 80%;
+            height: 30%;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: rgb(121, 75, 15);;
+            display: inline-block;
+            width: 200px;
+            height: 40px;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 10px 200px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Payment Form</h1></header>
+
+    <main>
+        <form action="#">
+            <h2>Step 1: Your Details</h2>
+
+            <div>
+                <label>Name</label>
+                <input class="input" type="text" placeholder="First and Last name">
+            </div>
+
+            <div>
+                <label>Email</label>
+                <input class="input" type="email" placeholder="name@domain.com">
+            </div>
+            
+            <div>
+                <label>Phone</label>
+                <input class="input" type="text" placeholder="Eg. 0340123456">
+            </div>
+
+            <p><h2>Step 2: Delivery Address</h2></p>
+
+            <div>
+                <label>Address</label>
+                <textarea cols="30" rows="3"></textarea>
+            </div>
+            <div>
+                <label>Pastcode</label>
+                <input class="input" type="text">
+            </div>
+            <div>
+                <label>Country</label>
+                <input class="input" type="text">
+            </div>
+
+            <p><h2>Step 3: Card Details</h2></p>
+
+            <div>
+                <label>Card type</label><br>
+                <input type="radio" name="card"><i class="fa-brands fa-cc-visa"></i> VISA
+                <input type="radio" name="card"><i class="fa-solid fa-credit-card"></i> Debit
+                <input type="radio" name="card"><i class="fa-brands fa-cc-mastercard"></i> Mastercard
+            </div>
+            <div>
+                <label>Card Number</label>
+                <input class="input" type="number">
+            </div>
+            <div>
+                <label>Security Code</label>
+                <input class="input" type="number">
+            </div>
+            <div>
+                <label>Name on card</label>
+                <input class="input" type="text" placeholder="Exact name as on card">
+            </div>
+            <section>
+                <p><strong><a href="#">BUY IT!</a></strong></p>
+            </section>
+        </form>
+    </main>
+</body>
+</html>

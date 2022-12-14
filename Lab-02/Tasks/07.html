@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        width: 100%;
+        height: 80%;
+        box-sizing: border-box;
+
+        padding: 20px 150px;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+      }
+
+      header {
+        display: flex;
+      }
+
+      .half {
+        flex: 1;
+      }
+
+      .two {
+        flex: 2;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      li a {
+        text-decoration: none;
+        color: white;
+      }
+
+      main {
+        width: 900px;
+        height: 600px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .imgPlace {
+        background-color: rgb(148, 141, 126);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      input {
+        width: 100px;
+        height: 30px;
+        border: 0 solid;
+        border-radius: 5px;
+        background-color: navy;
+        color: white;
+      }
+
+      .height {
+        margin: 10px;
+        width: 50%;
+        height: 40%;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2 class="half">Header Logo</h2>
+      <ul class="half">
+        <li><a href="#">Header Link One</a></li>
+        <li><a href="#">Header Link Two</a></li>
+        <li><a href="#">Header Link Three</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <div class="half height">
+        <h1>This website is awesome</h1>
+        <p>
+          This website has some text that goes here under the main title. It's a
+          smaller font and the color is lower contrast.
+        </p>
+        <input type="submit" value="signup" />
+      </div>
+
+      <div class="half imgPlace height">This is the place for image</div>
+    </main>
+  </body>
+</html>
