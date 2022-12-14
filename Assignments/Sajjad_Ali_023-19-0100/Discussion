@@ -1,0 +1,1 @@
+There is a problem of the columns systems in the web site. This website is not responsive since it is only designed for medium screen media devices. So we can add other media classes like col-sm-*, col-lg-* and col-xl-* etc to make it responsive.  

@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(220, 337, 340);
+  }
+
+  #name{
+    color: rgb(0, 0, 0);
+    font-size: 600;
+  }
+
+  #p{
+    color: rgb(31, 31, 31);
+  }
+
+  #mail{ color: rgb(87, 87, 231);
+   }
+
+   .card-img-top{
+    transition: transform .8s;
+   }
+  
+
+   .card-img-top:hover {
+  transform: scale(1.1); 
+}
+
+
+  .btn{
+    background-color: white;
+  color: black;
+  border: 1px solid #000;
+  }
+
+  .h1{
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  #bc{
+    margin-left: 10%;
+    margin-top: 5%;
+    color: black;
+  }

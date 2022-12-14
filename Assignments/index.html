@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card mt-3">
+                    <div class="card-header text-center text-danger">
+                        Registration Form
+                    </div>
+                    <div class="card-body">
+                        <form action="">
+                            <div class="form-floating mb-3">
+
+                                <input type="text" class="form-control" name="fullname" id="fullname"
+                                    placeholder="Enter your first name">
+                                <label for="fullname">First Name</label>
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="lastname" class="form-label col-md-3">Last Name</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control is-invalid" name="lastname" id="lastname">
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Not good!
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="abt" class="form-label">About you</label>
+                                <textarea name="about" id="abt" cols="30" rows="10" class="form-control"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="sate" class="form-label">State</label>
+                                <select name="state" id="state" class="form-control">
+                                    <option value="pak">Pakistan</option>
+                                    <option value="ie">Ireland</option>
+                                    <option value="usa">USA</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 form-check-inline">
+                                <input type="radio" class="form-check-input is-valid " id="male" required>
+                                <label for="male" class="form-check-label">Male</label>
+                                <div class="invalid-feedback">
+                                    Not good!
+                                </div>
+                                <div class="valid-feedback">
+                                    Pretty good!
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div id="ab" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#ab" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#ab" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#ab" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item">
+
+                <img src="https://source.unsplash.com/1600x700/?books" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+                <img src="https://source.unsplash.com/1600x700/?pen" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item active">
+                <div class="carousel-caption d-none d-sm-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+                <img src="https://source.unsplash.com/1600x700/?flowers" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#ab" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#ab" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar w-25 bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0"
+            aria-valuemax="100">
+        </div>
+    </div>
+
+    <button class="btn btn-primary">
+        <div class="spinner-grow text-danger spinner-grow-sm" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        Loading...
+    </button>
+
+
+    <ul class="nav flex-column">
+        <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item "><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item "><a class="nav-link disabled" href="#">Contact</a></li>
+    </ul>
+    <div class="modal fade" id="mavia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">mavia modal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <button class="btn btn-primary">Mavia</button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="abc" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">ABC Modal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1>ABC Modal</h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#mavia">Open Modal</button>
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#abc">Open ABC Modal</button> -->
+    <!-- <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown button
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+    </div> -->
+    <!-- 
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col">
+                <div class="card my-3">
+                    <img src="https://source.unsplash.com/450x300/?books" class="card-img-top" alt="...">
+
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card my-3">
+                    <img src="https://source.unsplash.com/450x300/?books" class="card-img-top" alt="...">
+
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                        </ul>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        <ul class="breadcrumb" style="--bs-breadcrumb-divider: '>>';">
+            <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="#">Order</a></li>
+            <li class="breadcrumb-item active">Customer Details</li>
+        </ul>
+        <h1>Hello World!</h1>
+        <div class="btn-group-vertical">
+            <button class=" btn-outline-warning btn ">Submit</button>
+            <button class="btn btn-outline-warning">Submit</button>
+            <button class="btn btn-outline-warning">Submit</button>
+            <button class="btn btn-outline-warning">Submit</button>
+            <button class="btn btn-outline-warning">Submit</button>
+        </div>
+        <div class="alert alert-danger alert-dismissible show fade">This is a <a class="" href="#">success</a> message!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <h3>
+            This is a heading
+            <span class="badge rounded-pill bg-danger">
+                Rounded
+            </span>
+        </h3>
+        <a href="#" class="btn btn-danger">GO</a>
+        <input type="button" value="Save" class="btn btn-warning">
+        <p class="myClass">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi culpa repellat, placeat
+            deleniti
+            voluptatibus maxime inventore dolor est dolores dolorum odit minus hic, vero porro? Ratione esse accusamus
+            voluptas vitae.</p>
+    </div> -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

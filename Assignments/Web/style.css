@@ -1,0 +1,40 @@
+section{
+	height: 1300px;
+
+}
+           
+[class*="pkgName"]{
+               
+	border: 2px solid gray;
+	border-bottom: 0;
+	border-radius: 5px 5px 0px 0px;        
+	margin-left: 10px;
+}
+
+.selected{
+	border: 3px solid red;
+        border-bottom: 0;
+                
+}
+[class="container"]{
+                
+	padding: 10px 10px;
+	box-sizing: border-box;
+}
+
+.pkg{
+                
+	width: 50%;
+        margin: 0 auto;
+}
+
+.button-style{
+	width: 100%; 
+        border-color: red;
+        color: red;
+           
+}
+
+.rowColor{
+	background-color: red;
+}
