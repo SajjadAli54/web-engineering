@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      td {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 100px;
+        background-color: lightgray;
+        font-weight: bolder;
+        color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <button type="button" onclick="resetData()">Reset</button>
+
+    <script>
+      let x = true;
+      onload = function () {
+        let tds = document.querySelectorAll("td");
+        for (let t of tds) {
+          t.innerText = "";
+          t.onclick = playGame;
+        }
+      };
+
+      function playGame(event) {
+        // debugger;
+        if (x) {
+          event.target.innerText = "X";
+          event.target.style.color = "brown";
+        } else {
+          event.target.innerText = "O";
+          event.target.style.color = "black";
+        }
+        x = !x;
+
+        event.target.onclick = null;
+
+        let tr = document.querySelectorAll("tr");
+        let data = [[tr[0].children], [tr[1].children], [tr[2].children]];
+
+        // debugger;
+        if (
+          checkValues(
+            data[0][0][0].innerText,
+            data[0][0][1].innerText,
+            data[0][0][2].innerText,
+            "X"
+          ) ||
+          checkValues(
+            data[1][0][0].innerText,
+            data[1][0][1].innerText,
+            data[1][0][2].innerText,
+            "X"
+          ) ||
+          checkValues(
+            data[2][0][0].innerText,
+            data[2][0][1].innerText,
+            data[2][0][2].innerText,
+            "X"
+          ) ||
+          checkValues(
+            data[0][0][0].innerText,
+            data[1][0][0].innerText,
+            data[2][0][0].innerText,
+            "X"
+          ) ||
+          checkValues(
+            data[0][0][1].innerText,
+            data[1][0][1].innerText,
+            data[2][0][1].innerText,
+            "X"
+          ) ||
+          checkValues(
+            data[0][0][2].innerText,
+            data[1][0][2].innerText,
+            data[2][0][2].innerText,
+            "X"
+          ) ||
+          checkValues(
+            data[0][0][0].innerText,
+            data[1][0][1].innerText,
+            data[2][0][2].innerText,
+            "X"
+          ) ||
+          checkValues(
+            data[2][0][0].innerText,
+            data[1][0][1].innerText,
+            data[0][0][2].innerText,
+            "X"
+          )
+        ) {
+          alert("X Won");
+          document.querySelector("button").click();
+        } else if (
+          checkValues(
+            data[0][0][0].innerText,
+            data[0][0][1].innerText,
+            data[0][0][2].innerText,
+            "O"
+          ) ||
+          checkValues(
+            data[1][0][0].innerText,
+            data[1][0][1].innerText,
+            data[1][0][2].innerText,
+            "O"
+          ) ||
+          checkValues(
+            data[2][0][0].innerText,
+            data[2][0][1].innerText,
+            data[2][0][2].innerText,
+            "O"
+          ) ||
+          checkValues(
+            data[0][0][0].innerText,
+            data[1][0][0].innerText,
+            data[2][0][0].innerText,
+            "O"
+          ) ||
+          checkValues(
+            data[0][0][1].innerText,
+            data[1][0][1].innerText,
+            data[2][0][1].innerText,
+            "O"
+          ) ||
+          checkValues(
+            data[0][0][2].innerText,
+            data[1][0][2].innerText,
+            data[2][0][2].innerText,
+            "O"
+          ) ||
+          checkValues(
+            data[0][0][0].innerText,
+            data[1][0][1].innerText,
+            data[2][0][2].innerText,
+            "O"
+          ) ||
+          checkValues(
+            data[2][0][0].innerText,
+            data[1][0][1].innerText,
+            data[0][0][2].innerText,
+            "O"
+          )
+        ) {
+          alert("O Won");
+          document.querySelector("button").click();
+        }
+      }
+
+      function checkValues(a, b, c, s) {
+        return a == s && b == s && c == s;
+      }
+
+      function resetData() {
+        let tds = document.querySelectorAll("td");
+        for (let t of tds) {
+          t.innerText = "";
+          t.onclick = playGame;
+        }
+        x = true;
+      }
+    </script>
+  </body>
+</html>

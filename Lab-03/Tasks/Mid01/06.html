@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .container {
+        width: 80%;
+        background-color: green;
+      }
+
+      tr {
+        width: 80%;
+        height: 40px;
+        border-radius: 10px;
+        padding: 20px;
+        background-color: rgb(102, 204, 102);
+      }
+
+      .same {
+        background-color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Payment Information</h1>
+
+    <div class="container">
+      <form action="#">
+        <table>
+          <tr class="same">
+            <td colspan="2"><h2>Step:1 Your Details</h2></td>
+          </tr>
+          <tr>
+            <td><label for="name">Username</label></td>
+            <td>
+              <input type="text" id="name" placeholder="First and Last name" />
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="email">Email</label></td>
+            <td>
+              <input
+                type="email"
+                name=""
+                id="email"
+                placeholder="example@gmail.com"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="tel">Phone</label></td>
+            <td>
+              <input type="tel" id="tel" placeholder="Ex: +923402689270" />
+            </td>
+          </tr>
+
+          <tr class="same">
+            <td colspan="2"><h2>Delivery Address</h2></td>
+          </tr>
+          <tr>
+            <td><label for="address">Address</label></td>
+            <td><textarea id="address" cols="26" rows="4"></textarea></td>
+          </tr>
+
+          <tr>
+            <td><label for="post">Postal Code</label></td>
+            <td><input type="text" id="post" /></td>
+          </tr>
+
+          <tr>
+            <td><label for="country">Country</label></td>
+            <td><input type="text" id="country" /></td>
+          </tr>
+
+          <tr class="same">
+            <td colspan="2"><h2>Step:3 Card Details</h2></td>
+          </tr>
+
+          <tr>
+            <td><label>Card type</label></td>
+            <td>
+              <input type="checkbox" id="visa" />
+              <label for="visa"> VISA</label>
+
+              <input type="checkbox" id="debit" />
+              <label for="debit"> Debit</label>
+
+              <input type="checkbox" id="master" />
+              <label for="master">Master Card</label>
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="number">Card Number</label></td>
+            <td><input type="number" id="number" /></td>
+          </tr>
+
+          <tr>
+            <td><label for="security">Security Code</label></td>
+            <td><input type="number" id="security" /></td>
+          </tr>
+
+          <tr>
+            <td><label for="nameCard">Name on Card</label></td>
+            <td><input type="text" id="nameCard" /></td>
+          </tr>
+
+          <tr>
+            <td colspan="2"><button type="button">Buy it</button></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

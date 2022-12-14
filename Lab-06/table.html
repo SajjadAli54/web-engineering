@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+<body>
+
+    <div>
+        <div>
+            <label for="txtName">Name</label>
+            <input type="text" name="" id="txtName"> <br> <br>
+            <label for="txtId">Id</label>
+            <input type="text" name="" id="txtId"> <br> <br>
+            <label for="txtBatch">Batch</label>
+            <input type="text" name="" id="txtBatch"> <br> <br>
+            <label for="txtGPA">GPA</label>
+            <input type="text" name="" id="txtGPA"> <br>  <br>
+
+            <button onclick="submit()"> Click</button>
+        </div>
+        <table id="table" border="2">
+            <tr>
+                <th>S. No</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Batch</th>
+                <th>GPA</th>
+            </tr>
+
+        </table>
+
+
+        <p id="data">
+
+        </p>
+    </div>
+
+  
+
+    <script>
+        let num = 1;
+        function submit(){
+            let name = document.getElementById('txtName').value;
+            let id = document.getElementById('txtId').value;
+            let batch = document.getElementById('txtBatch').value;
+            let gpa = document.getElementById('txtGPA').value;
+
+            let text = 'Name  :  ' + name + '<br>' +
+                        'Id  : ' + id + '<br>' + 
+                        'Batch :  ' + batch + '<br>' + 
+                        'GPA  : ' + gpa + '<br>';
+            document.getElementById('data').innerHTML = text;
+
+            let tr = document.createElement('tr');
+
+            let data = [num++, id, name, batch, gpa];
+            for(let d of data){
+                let td = document.createElement('td');
+                let txtNode = document.createTextNode(d);
+                td.appendChild(txtNode);
+                tr.appendChild(td);
+            }
+            document.getElementById('table').appendChild(tr);
+            
+        }
+
+    </script>
+    
+    
+</body>
+</html>

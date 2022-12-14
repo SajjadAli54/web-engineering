@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="num"> <br> <br>
+    <button onclick="submit()">Generate Checkboxes</button>
+    <button onclick="count()">Checked Checkboxes</button>
+    <div id="checks"></div>
+    <label for=""></label>
+
+    <script>
+        function submit(){
+            document.getElementById('checks').innerHTML = "";
+            let num = Number(document.getElementById('num').value);
+            for(let i=1;i<=num;i++){
+                let x = document.createElement('input');
+                x.setAttribute('type', 'checkbox');
+                x.setAttribute('id', `checkbox${i}`);
+                let y = document.createElement('label');
+                y.setAttribute('for', `checkbox${i}`);
+                y.innerHTML = `Checkbox ${i}`;
+                document.getElementById('checks').appendChild(x);
+                document.getElementById('checks').appendChild(y);
+                document.getElementById('checks').appendChild(document.createElement('br'));
+            }
+        }
+
+        function count(){
+            
+        }
+    </script>
+</body>
+</html>

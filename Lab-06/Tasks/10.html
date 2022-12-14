@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td><label for="number">Enter any number : </label></td>
+        <td><input type="text" id="number" /></td>
+      </tr>
+      <tr>
+        <td>
+          <button type="button" onclick="generate()">
+            Generate Checkboxes
+          </button>
+        </td>
+        <td>
+          <button type="button" onclick="view()">
+            See Selected Checkboxes
+          </button>
+        </td>
+      </tr>
+    </table>
+
+    <div id="checkboxes"></div>
+    <h2>The selected checkboxes are :</h2>
+    <div id="selected"></div>
+
+    <script>
+      function generate() {
+        document.querySelector("#selected").innerText = "";
+
+        let div = document.getElementById("checkboxes");
+        div.innerHTML = "";
+        let num = Number(document.getElementById("number").value);
+        for (let i = 1; i <= num; i++) {
+          let label = document.createElement("label");
+          label.setAttribute("for", `${i}`);
+          label.innerText = `Checkbox${i}`;
+
+          let cb = document.createElement("input");
+          cb.setAttribute("id", `${i}`);
+          cb.setAttribute("type", "checkbox");
+
+          div.appendChild(cb);
+          div.appendChild(label);
+          div.appendChild(document.createElement("br"));
+        }
+      }
+
+      function view() {
+        let checkboxes = document.querySelectorAll("#checkboxes input");
+        let div = document.querySelector("#selected");
+        div.innerText = "";
+        let i = 1;
+        for (let cb of checkboxes) {
+          if (cb.checked) div.innerText += `CheckBox${i}`;
+          i++;
+        }
+      }
+    </script>
+  </body>
+</html>

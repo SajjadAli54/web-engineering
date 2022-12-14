@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td><label for="input">Enter a to do task</label></td>
+      </tr>
+      <tr>
+        <td><input type="text" id="input" /></td>
+        <td><button onclick="saveRecord()">Save</button></td>
+      </tr>
+    </table>
+    <br /><br />
+    <table id="list"></table>
+
+    <script>
+      let i = 0;
+      document.addEventListener("DOMContentLoaded", () => {
+        let keys = Object.keys(localStorage).sort();
+        for (let k of keys) {
+          addItem(k, localStorage.getItem(k));
+          i = k;
+        }
+        if (i) i++;
+      });
+
+      function saveRecord(event) {
+        let text = document.getElementById("input").value;
+        addItem(i, "0" + text);
+        localStorage.setItem(i, "0" + text);
+
+        i++;
+      }
+
+      function strike(event) {
+        let label = event.target.nextElementSibling;
+        if (!label.children.length) {
+          let s = document.createElement("s");
+          s.innerText = label.innerText;
+          label.innerHTML = "";
+          label.appendChild(s);
+          localStorage.setItem(label.getAttribute("for"), "1" + s.innerText);
+        } else {
+          let text = label.children[0].innerText;
+          label.innerHTML = "";
+          label.innerText = text;
+          localStorage.setItem(label.getAttribute("for"), "0" + s.innerText);
+        }
+      }
+
+      function deleteTask(event) {
+        localStorage.removeItem(event.target.getAttribute("name"));
+        event.target.parentElement.parentElement.remove();
+      }
+
+      function addItem(i, text) {
+        let section = document.getElementById("list");
+
+        let tr = document.createElement("tr");
+        let td = document.createElement("td");
+
+        let cb = document.createElement("input");
+        cb.setAttribute("type", "checkbox");
+        cb.setAttribute("id", i);
+        cb.onclick = strike;
+        td.appendChild(cb);
+
+        let label = document.createElement("label");
+        label.setAttribute("for", i);
+        if (text[0] == "0") label.innerText = text.substr(1);
+        else {
+          let s = document.createElement("s");
+          s.innerText = text.substr(1);
+          label.appendChild(s);
+          cb.checked = true;
+        }
+        td.appendChild(label);
+
+        tr.appendChild(td);
+
+        td = document.createElement("td");
+
+        let btn = document.createElement("a");
+        btn.setAttribute("name", i);
+        btn.setAttribute("href", "//");
+        btn.onclick = deleteTask;
+        btn.innerText = "Delete";
+
+        td.appendChild(btn);
+        tr.appendChild(td);
+
+        section.append(tr);
+      }
+    </script>
+  </body>
+</html>

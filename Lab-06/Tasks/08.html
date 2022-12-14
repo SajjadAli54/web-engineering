@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Enter details of a student to add in table</h2>
+    <table>
+      <tr>
+        <td><label for="name">Name : </label></td>
+        <td><input type="text" id="name" /></td>
+      </tr>
+      <tr>
+        <td><label for="id">St. ID : </label></td>
+        <td><input type="text" id="id" /></td>
+      </tr>
+      <tr>
+        <td><label for="gpa">GPA : </label></td>
+        <td><input type="text" id="gpa" /></td>
+      </tr>
+      <tr>
+        <td><label for="batch">Batch : </label></td>
+        <td><input type="text" id="batch" /></td>
+      </tr>
+      <br />
+      <tr>
+        <td colspan="2">
+          <button type="button" onclick="add()">Add to table</button>
+        </td>
+      </tr>
+    </table>
+
+    <br />
+
+    <table border="1" id="records">
+      <tr>
+        <th>S. No</th>
+        <th>Student Name</th>
+        <th>Student ID</th>
+        <th>Batch</th>
+        <th>GPA</th>
+      </tr>
+    </table>
+
+    <script>
+      let record = 0;
+      function add() {
+        let data = [
+          ++record,
+          document.querySelector("#name").value,
+          document.querySelector("#id").value,
+          document.querySelector("#batch").value,
+          document.querySelector("#gpa").value,
+        ];
+
+        let table = document.querySelector("#records");
+        let tr = document.createElement("tr");
+        for (let d of data) {
+          let td = document.createElement("td");
+          td.innerText = d;
+          tr.appendChild(td);
+        }
+        table.appendChild(tr);
+      }
+    </script>
+  </body>
+</html>
